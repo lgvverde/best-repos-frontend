@@ -1,0 +1,26 @@
+#RepositoryList {
+    max-height: 400px;
+    overflow-y: auto;
+    scrollbar-color: #dc3545 #dedede;
+    scrollbar-width: thin;
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    #RepositoryList {
+        max-height: 340px;
+        overflow-y: auto;
+    }
+
+    .search-button{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    #RepositoryList {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+}
+    
