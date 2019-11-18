@@ -1,0 +1,16 @@
+.avatar-img {
+    width: 100px;
+    height: 100px;
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .avatar-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .card-col {
+        font-size: 12px;
+    }
+}
