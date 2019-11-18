@@ -13,7 +13,7 @@
 ## 📄 <a id="description">Descrição</a>
 
 - Interface da aplicação BestRepos (sistema de consulta de repositórios do GitHub).
-- **Confira aqui o <a href="https://best-repos.herokuapp.com/">LIVE DEMO</a>**
+- **Confira aqui o <a href="http://best-repos.herokuapp.com/" target="_blank">LIVE DEMO</a>**
 - Tecnologias e bibliotecas utilizadas:
 
   - NodeJS
