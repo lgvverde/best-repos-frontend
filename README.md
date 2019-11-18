@@ -1,68 +1,92 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🎈 [Frontend] - BestRepos - Busque pelos melhores repositórios
 
-## Available Scripts
+##  🔍 Sumário
 
-In the project directory, you can run:
+- [Descrição](#description)
+- [Configurações padrão](#standard-configurations)
+- [Variáveis ambiente](#environment-vars)
+- [Rotinas de Teste](#test-routines)
+- [Iniciar aplicação](#start-application)
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 📄 <a id="description">Descrição</a>
 
-### `yarn test`
+- Interface da aplicação BestRepos (sistema de consulta de repositórios do GitHub).
+- **Confira aqui o <a href="https://best-repos.herokuapp.com/">LIVE DEMO</a>**
+- Tecnologias e bibliotecas utilizadas:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - NodeJS
+  - React
+  - Axios
+  - react-bootstrap
+  - react-alert
+  - Redux
+  - Enzyme
+  - Jest
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## 🔨 <a id="standard-configurations">Configurações padrão</a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Você pode acessar algumas configurações padrões do sistema pela pasta **config** e **api**, localizada dentro da pasta **src**.
 
-### `yarn eject`
+- *config/index.js*:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  - Alguns dados padronizados do sistema como:
+    - Máximo de itens na pesquisa;
+    - Opções de linguagem de programação para busca;
+    - Lista de Menus e suas respectivas chaves.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- *api/index.js:*
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  - Estão localizadas todas as chamadas necessárias, sinta-se a vontade para criar novas chamadas e as implementar neste arquivo. Só não esqueça de <u>configurar as variáveis ambiente</u> e ter certeza que o end-point **existe**!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  
 
-## Learn More
+## 🌎 <a id="environment-vars">Variáveis ambiente</a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Para a configuração das variáveis ambiente é necessária a criação de um arquivo na pasta raiz da aplicação, que será chamado de **.env**.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Neste arquivo .env devem estar contidas as seguintes informações, onde o prefixo de cada uma exemplifica o dado a ser inserido.
 
-### Code Splitting
+  - **OBS:** Manter o mesmo padrão de formato do exemplo apresentado.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+  - **OBS²**: É necessário que todas as chaves iniciem com *REACT_APP*, pois é uma regra do framework para identificação das variáveis ambiente.
 
-### Analyzing the Bundle Size
+  - Lembrando que todos os valores são valores EXEMPLO.
+  
+    ````
+    REACT_APP_API_URL=http://sua.api.com
+    REACT_APP_GITHUB_API_URL=https://api.github.com/search
+    ````
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## 🦾 <a id="test-routines">Rotina de testes</a>
 
-### Making a Progressive Web App
+- Tecnologia utilizada para a implementação de TDD:  <a href="https://jestjs.io/">Jest</a>
+- Os testes foram executados  visando a funcionalidade dos componentes principais que são:
+  - Página inicial (*App*);
+  - Seção de pesquisa (*SearchSection*);
+- Seção de histórico de repositórios (*RepositoriesHistorySection*).
+- Para realizar os testes proporcionados é fácil! Apenas verifique se configurou corretamente os dados até agora, e execute o comando:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+> yarn test
 
-### Advanced Configuration
+- Aguarde o término dos testes para prosseguir com o início da aplicação.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+  
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## 💻 <a id="start-application">Iniciar aplicação</a>
 
-### `yarn build` fails to minify
+- Após seguir todos os passos, vamos iniciar a aplicação!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- É bem simples, basta iniciar com a instrução:
+
+  > yarn start
+
+
+
+
+
+
