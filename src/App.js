@@ -27,9 +27,9 @@ function App() {
             <Card.Body>
               <Row>
                 <Col md={12}>
-                  <Row className="mb-2">
+                  <Row className="mb-2 logo-row">
                     <Col className="text-center" md={12}>
-                      <img id="logo-ateliware" src={img} alt="logo_ateliware" />
+                      <h1 id="LogoBest"><b>BestRepos</b></h1>
                     </Col>
                   </Row>
                   <Row>

@@ -11,14 +11,24 @@
     width: 70%;
 }
 
-.App #logo-ateliware {
+/* .App #logo-ateliware {
     width: 35%;
     height: auto;
-}
+} */
 
 .description {
     font-size: 12px;
     line-height: 40%;
+}
+
+.logo-row  {
+    padding: 12px;
+    cursor: default;
+}
+
+.logo-row #LogoBest {
+    color: #dc3545;
+    font-size: 50px;
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {  
@@ -28,6 +38,16 @@
 
     .description {
         display: none;
+    }
+
+    .logo-row  {
+        padding: 2px;
+        cursor: default;
+    }
+    
+    .logo-row #LogoBest {
+        color: #dc3545;
+        font-size: 30px;
     }
 }
 
@@ -40,5 +60,15 @@
     .description {
         font-size: 12px;
         line-height: 200%;
+    }
+
+    .logo-row  {
+        padding: 5px;
+        cursor: default;
+    }
+    
+    .logo-row #LogoBest {
+        color: #dc3545;
+        font-size: 40px;
     }
 }
