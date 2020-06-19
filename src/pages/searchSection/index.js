@@ -24,7 +24,7 @@ export default function SearchSection() {
                 try {
                     setSearchSectionState({ isLoading: true });
                     const gitResponse = await api.getGitRepositories(selectedLanguage.value);
-                    const repositories = gitResponse.data.slice(0, config.MAX_ITEMS_SEARCH);
+                    const repositories = gitResponse.data.items.slice(0, config.MAX_ITEMS_SEARCH);
                     await api.storeRepositories(repositories);
                     dispatch({ type: 'SEARCH_CHANGED', searchData: repositories });
                     setSearchSectionState({ isLoading: false });
