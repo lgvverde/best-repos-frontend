@@ -40,17 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "- [Descrição](#description)\r - [Configurações padrão](#standard-configurations)\r - [Variáveis ambiente](#environment-vars)\r - [Rotinas de Teste](#test-routines)\r - [Iniciar aplicação](#start-application)",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lucasvillaverde/best-repos-frontend.git"
-  },
-  "author": "Lucas Villa Verde",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lucasvillaverde/best-repos-frontend/issues"
-  },
-  "homepage": "https://github.com/lucasvillaverde/best-repos-frontend#readme"
+  }
 }
