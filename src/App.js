@@ -8,8 +8,6 @@ import ContainerSection from './pages/containerSection';
 
 import './styles/App.css';
 
-const img = require('./assets/ateliware_logo.jpg');
-
 const AlertOptions = {
   position: positions.BOTTOM_CENTER,
   timeout: 5000,
