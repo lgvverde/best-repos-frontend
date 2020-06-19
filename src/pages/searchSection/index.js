@@ -27,29 +27,21 @@ export default function SearchSection() {
     function handleSearchButtonClick() {
         if (selectedLanguage) {
             async function fetchData() {
-                await setSearchSectionState({ isLoading: true });
-                await api.getGitRepositories(selectedLanguage.value)
-                    .then(async function (response) {
-                        const repo_data = await response.data.items.slice(0, config.MAX_ITEMS_SEARCH);
-                        await api.storeRepositories(repo_data)
-                            .then(function(){
-                                setSearchSectionState({ isLoading: false });
-                                dispatch({ type: 'SEARCH_CHANGED', searchData: repo_data });
-                            })
-                            .catch(function(error){
-                                setSearchSectionState({ isLoading: false });
-                                alert.show('Erro: ' + error, {
-                                    timeout: 3000,
-                                    type: 'error',
-                                })
-                            })
+                try {
+                    setSearchSectionState({ isLoading: true });
+                    const gitResponse = await api.getGitRepositories(selectedLanguage.value);
+                    const storedRepos = await api.storeRepositories(gitResponse.data.items.slice(0, config.MAX_ITEMS_SEARCH));
+                    dispatch({ type: 'SEARCH_CHANGED', searchData: storedRepos.data });
+                    setSearchSectionState({ isLoading: false });
+                } catch (err) {
+                    setSearchSectionState({ isLoading: false });
+                    alert.show('Erro: ' + err, {
+                        timeout: 3000,
+                        type: 'error',
                     })
-                    .catch(function (error) {
-                        alert.show('Erro: ' + error, {
-                            timeout: 3000,
-                            type: 'error',
-                        })
-                    });
+                }
+
+
             }
             fetchData();
         } else {
@@ -80,7 +72,7 @@ export default function SearchSection() {
                         timeout={3000} //3 secs
                     />
                     </Col>
-                </Row>                
+                </Row>
             );
         }else{
             return(
@@ -109,5 +101,3 @@ export default function SearchSection() {
 
 
 }
-
-

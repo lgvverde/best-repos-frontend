@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Col, Row, Button } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import RepositoryList from '../../components/repositoryList';
 import Loader from 'react-loader-spinner';
 import * as api from '../../api';
@@ -13,21 +13,20 @@ export default function RepositoriesHistorySection() {
 
   useEffect( () => {
     async function fetchData() {
-      await setRepositoriesHistoryState({ isLoading: true })
-      await api.getRepositoriesHistory()
-        .then(function(response){
-          setRepositoriesHistoryState({isLoading: false, repositories: response.data});
+      try {
+        setRepositoriesHistoryState({ isLoading: true })
+        const historyResponse = await api.getRepositoriesHistory();
+        setRepositoriesHistoryState({ isLoading: false, repositories: historyResponse.data });
+      } catch (err) {
+        alert.show('Erro: ' + err, {
+          timeout: 3000,
+          type: 'error',
         })
-        .catch(function(error){
-          alert.show('Erro: ' + error, {
-            timeout: 3000,
-            type: 'error',
-          })
-        })
+      }
     }
 
     fetchData();
-  }, []);
+  }, [alert]);
 
   const handleClearButton = async () => {
       await setRepositoriesHistoryState({ isLoading: true })
@@ -60,7 +59,7 @@ export default function RepositoriesHistorySection() {
                     timeout={3000}
                 />
                 </Col>
-            </Row>                
+            </Row>
         );
     }else{
         return(
