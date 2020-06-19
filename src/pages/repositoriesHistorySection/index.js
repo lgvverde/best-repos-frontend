@@ -18,6 +18,7 @@ export default function RepositoriesHistorySection() {
         const historyResponse = await api.getRepositoriesHistory();
         setRepositoriesHistoryState({ isLoading: false, repositories: historyResponse.data });
       } catch (err) {
+        setRepositoriesHistoryState({ isLoading: false })
         alert.show('Erro: ' + err, {
           timeout: 3000,
           type: 'error',
@@ -26,13 +27,13 @@ export default function RepositoriesHistorySection() {
     }
 
     fetchData();
-  }, [alert]);
+  }, [repositoriesHistoryState.historyResponse]);
 
   const handleClearButton = async () => {
     try {
       await setRepositoriesHistoryState({ isLoading: true })
       await api.clearRepositoriesHistory();
-      setRepositoriesHistoryState({});
+      setRepositoriesHistoryState({ isLoading: false });
       showHistoryCleanedAlert();
     } catch (err) {
       alert.show('Erro: ' + err, {
@@ -59,7 +60,6 @@ export default function RepositoriesHistorySection() {
                     color="#dc3545"
                     height={150}
                     width={150}
-                    timeout={3000}
                 />
                 </Col>
             </Row>

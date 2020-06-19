@@ -18,19 +18,13 @@ export default function SearchSection() {
     const dispatch = useDispatch();
     const alert = useAlert();
 
-    useEffect(() => {
-        if(searchData && searchData.length !== 0){
-            setSearchSectionState({ isLoading: false })
-        }
-    }, [searchData]);
-
     function handleSearchButtonClick() {
         if (selectedLanguage) {
             async function fetchData() {
                 try {
                     setSearchSectionState({ isLoading: true });
                     const gitResponse = await api.getGitRepositories(selectedLanguage.value);
-                    const repositories = gitResponse.data.items.slice(0, config.MAX_ITEMS_SEARCH);
+                    const repositories = gitResponse.data.slice(0, config.MAX_ITEMS_SEARCH);
                     await api.storeRepositories(repositories);
                     dispatch({ type: 'SEARCH_CHANGED', searchData: repositories });
                     setSearchSectionState({ isLoading: false });
@@ -53,7 +47,7 @@ export default function SearchSection() {
                     console.log('Usuário não selecionou linguagem de programação')
                 },
                 onClose: () => {
-                    console.log('Usuário fechou o alerta.')
+                    // Handler
                 }
             })
         }
@@ -70,7 +64,6 @@ export default function SearchSection() {
                         color="#dc3545"
                         height={150}
                         width={150}
-                        timeout={3000} //3 secs
                     />
                     </Col>
                 </Row>
