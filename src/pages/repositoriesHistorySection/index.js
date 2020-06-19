@@ -29,21 +29,24 @@ export default function RepositoriesHistorySection() {
   }, [alert]);
 
   const handleClearButton = async () => {
+    try {
       await setRepositoriesHistoryState({ isLoading: true })
-      await api.clearRepositoriesHistory()
-      .then(function(){
-        setRepositoriesHistoryState({});
-        alert.show('O histórico foi limpo!', {
-            timeout: 3000,
-            type: 'success',
-        })
+      await api.clearRepositoriesHistory();
+      setRepositoriesHistoryState({});
+      showHistoryCleanedAlert();
+    } catch (err) {
+      alert.show('Erro: ' + err, {
+        timeout: 3000,
+        type: 'error',
       })
-      .catch(function(error){
-        alert.show('Erro: ' + error, {
-          timeout: 3000,
-          type: 'error',
-        })
-      })
+    }
+  }
+
+  function showHistoryCleanedAlert() {
+    alert.show('O histórico foi limpo!', {
+      timeout: 3000,
+      type: 'success',
+    })
   }
 
   function renderContent(){
