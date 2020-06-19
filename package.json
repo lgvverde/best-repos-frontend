@@ -15,7 +15,7 @@
     "react-icons": "^3.8.0",
     "react-loader-spinner": "^3.1.5",
     "react-redux": "^7.1.3",
-    "react-scripts": "3.2.0",
+    "react-scripts": "^3.4.1",
     "react-select": "^3.0.8",
     "redux": "^4.0.4",
     "redux-mock-store": "^1.5.3"
@@ -40,5 +40,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "- [Descrição](#description)\r - [Configurações padrão](#standard-configurations)\r - [Variáveis ambiente](#environment-vars)\r - [Rotinas de Teste](#test-routines)\r - [Iniciar aplicação](#start-application)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasvillaverde/best-repos-frontend.git"
+  },
+  "author": "Lucas Villa Verde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasvillaverde/best-repos-frontend/issues"
+  },
+  "homepage": "https://github.com/lucasvillaverde/best-repos-frontend#readme"
 }
